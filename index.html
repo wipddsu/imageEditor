@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section class="header">
+        <h1>image editor</h1>
+      </section>
+      <section class="boxContainer">
+        <div class="leftBox">
+          <div id="filterContainer">
+            <h2>filters</h2>
+            <div class="btnContainer">
+              <button id="brightness" class="btn active">brightness</button>
+              <button id="saturate" class="btn">saturation</button>
+              <button id="invert" class="btn">inversion</button>
+              <button id="contrast" class="btn">contrast</button>
+              <button id="sepia" class="btn">sepia</button>
+              <button id="grayscale" class="btn">grayscale</button>
+            </div>
+            <div class="rangeContainer">
+              <label for="slider">brightness</label>
+              <span id="rangePrint">100%</span>
+              <input
+                id="slider"
+                type="range"
+                min="0"
+                max="100"
+                value="100"
+                name="brightness"
+                disabled="true"
+              />
+            </div>
+          </div>
+          <button id="reset">reset filter</button>
+        </div>
+        <div class="rightBox">
+          <div id="canvas-container">
+            <p class="noImage">choose any image!</p>
+            <div id="image__">
+              <canvas id="editorCanvas" width="500" height="333"></canvas>
+            </div>
+          </div>
+          <form class="chooseContainer">
+            <label id="choose" for="file">choose image</label>
+            <input type="file" id="file" accept="image/png, image/jpeg" />
+            <label id="save" for="saveImg">save image</label>
+            <input type="button" id="saveImg" disabled="true" />
+          </form>
+          <a href="" download=""></a>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
